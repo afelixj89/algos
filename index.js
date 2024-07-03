@@ -23,4 +23,24 @@ function twoNumberSum(array, targetSum) {
   }
   
 
+
+
+  function nonConstructibleChange(coins) {
+    let sortedCoins = coins.sort((a,b) => a-b);
+    let currentChangeCreated = 0;
+  
+    for(let i = 0; i < coins.length; i++){
+      let coin = sortedCoins[i];
+      if (coin > currentChangeCreated + 1 ){
+        break;
+      }
+      currentChangeCreated += coin
+      
+      
+    }
+    
+  return currentChangeCreated + 1
+
+  }
+
   
