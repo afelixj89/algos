@@ -52,3 +52,19 @@ function tournamentWinner(competitions, results) {
   }
   return currentBestTeam;
 }
+
+function transposeMatrix(matrix){
+  let newMatrix = []
+
+  for(let i = 0; i < matrix[0].length; i++){
+    newMatrix.push([])
+  }
+
+  for(let y = 0; y < matrix.length; y++){
+    for(let x = 0; x < matrix[0].length; x++){
+      newMatrix[x][y] = matrix[y][x]
+    }
+  }
+  return newMatrix
+}
+
