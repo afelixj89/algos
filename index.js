@@ -81,5 +81,42 @@ function isPalindrome(string){
 
   }
   return true
-}a
+}
 
+
+function generateDocument(characters, document){
+  const charCount = {};
+
+  for (const char of characters) {
+    if(!(char in charCount)) {
+      charCount[char] = 0;
+ }
+ charCount[char]++
+  }
+
+  for(const char of document){
+    if(!(char in charCount) || charCount[char] === 0){
+      return false;
+    }
+    charCount[char]--;
+  }
+  return true
+
+
+}
+
+function commonCharacters(strings) {
+  if (strings.length === 0) return [];
+
+  // Convert each string to a set of characters
+  const charSets = strings.map(str => new Set(str));
+
+  // Get the intersection of all sets
+  let commonSet = charSets[0];
+  for (let i = 1; i < charSets.length; i++) {
+    commonSet = new Set([...commonSet].filter(char => charSets[i].has(char)));
+  }
+
+  // Convert the set to an array and return it
+  return Array.from(commonSet);
+}
