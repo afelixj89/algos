@@ -189,3 +189,21 @@ let array =[5,1,22,25,6,-1,8,10]
 let sequence = [1,6,-1,10]
 
 console.log(validateSubsequence(array, sequence))
+
+
+
+// Function to calculate the nth Fibonacci number using recursion
+function getNthFib(n) {
+  // Base cases: the first two Fibonacci numbers are 0 and 1
+  if (n === 1) {
+    return 0;
+  } else if (n === 2) {
+    return 1;
+  }
+
+  // Recursive case: the nth Fibonacci number is the sum of the (n-1)th and (n-2)th Fibonacci numbers
+  return getNthFib(n - 1) + getNthFib(n - 2);
+}
+
+// Example usage: Get the 6th Fibonacci number
+console.log(getNthFib(6)); // Output: 5
