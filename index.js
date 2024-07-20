@@ -24,10 +24,9 @@
 //       break;
 //     }
 //     currentChangeCreated += coin
-    
-    
+
 //   }
-  
+
 // return currentChangeCreated + 1
 // }
 
@@ -83,7 +82,6 @@
 //   return true
 // }
 
-
 // function generateDocument(characters, document){
 //   const charCount = {};
 
@@ -102,7 +100,6 @@
 //   }
 //   return true
 
-
 // }
 
 // function commonCharacters(strings) {
@@ -120,7 +117,6 @@
 //   // Convert the set to an array and return it
 //   return Array.from(commonSet);
 // }
-
 
 // Define the Node class
 class Node {
@@ -156,54 +152,127 @@ class LinkedList {
   print() {
     let current = this.head;
     while (current !== null) {
-      console.log(`Value: ${current.value}, Next: ${current.next ? current.next.value : null}`);
+      console.log(
+        `Value: ${current.value}, Next: ${
+          current.next ? current.next.value : null
+        }`
+      );
       current = current.next;
     }
   }
 }
 
 // Example usage:
-const list = new LinkedList();
-list.append(1);
-list.append(2);
-list.append(3);
+// const list = new LinkedList();
+// list.append(1);
+// list.append(2);
+// list.append(3);
 
-console.log("Printing the linked list:");
-list.print();
+// console.log("Printing the linked list:");
+// list.print();
 
-function validateSubsequence(array, sequence){
-  let arrayPointer = 0; 
-  let sequencePointer = 0;
+// function validateSubsequence(array, sequence){
+//   let arrayPointer = 0;
+//   let sequencePointer = 0;
 
-  while(arrayPointer < array.length && sequencePointer < sequence.length){
-    if(array[arrayPointer] === sequence[sequencePointer]){
-      sequencePointer++
+//   while(arrayPointer < array.length && sequencePointer < sequence.length){
+//     if(array[arrayPointer] === sequence[sequencePointer]){
+//       sequencePointer++
+//     }
+//     arrayPointer++
+//   }
+//   return sequencePointer === sequence.length
+
+// }
+
+// let array =[5,1,22,25,6,-1,8,10]
+// let sequence = [1,6,-1,10]
+
+// console.log(validateSubsequence(array, sequence))
+
+// // Function to calculate the nth Fibonacci number using recursion
+// function getNthFib(n) {
+//   // Base cases: the first two Fibonacci numbers are 0 and 1
+//   if (n === 1) {
+//     console.log(n)
+//     return 0;
+//   } else if (n === 2) {
+//     console.log(n)
+//     return 1;
+//   }
+
+//   // Recursive case: the nth Fibonacci number is the sum of the (n-1)th and (n-2)th Fibonacci numbers
+//   return getNthFib(n - 1) + getNthFib(n - 2);
+// }
+
+// // Example usage: Get the 6th Fibonacci number
+// console.log(getNthFib(6)); // Output: 5
+
+// function semordnilap(words){
+
+//   const semordnilapPairs= [];
+
+//   const seenWords = new Set();
+
+//   for(let word of words){
+
+//     const reversedWords = word.split('').reverse().join('');
+
+//     if(seenWords.has(reversedWords) && reversedWords !== word){
+//       semordnilapPairs.push([word, reversedWords])
+//     }
+//     seenWords.add(word)
+//   }
+
+//   return semordnilapPairs
+// }
+
+// console.log(semordnilap([
+//   "hello",
+//   "olleh",
+//   "world",
+//   "dlrow",
+//   "javascript",
+//   "tpircsavaj",
+//   "coding",
+//   "gnidoc",
+//   "algorithm",
+//   "mhtirogla",
+//   "openai",
+//   "ianepo",
+//   "developer",
+//   "repoleved",
+//   "frontend",
+//   "dnetnorf",
+//   "backend",
+//   "dnekcab",
+//   "database",
+//   "esabatad"
+// ]))
+
+function getfib(n) {
+  let fib = [0, 1];
+
+  if (n === 1) return 0;
+  if (n === 2) return 1;
+
+  for (let i = 2; i < n; i++) {
+    fib[i] = fib[i - 1] + fib[i - 2];
+  }
+  return fib[n - 1];
+}
+
+function reverseIt(words) {
+  let array = [];
+  let pairs = new Set();
+
+  for (let word of words) {
+    let reverseWord = word.split("").reverse().join("");
+    if (pairs.has(reverseWord) && reverseWord !== word) {
+      array.push([reverseWord, word])
     }
-    arrayPointer++
-  }
-  return sequencePointer === sequence.length 
-  
-}
-
-let array =[5,1,22,25,6,-1,8,10]
-let sequence = [1,6,-1,10]
-
-console.log(validateSubsequence(array, sequence))
-
-
-
-// Function to calculate the nth Fibonacci number using recursion
-function getNthFib(n) {
-  // Base cases: the first two Fibonacci numbers are 0 and 1
-  if (n === 1) {
-    return 0;
-  } else if (n === 2) {
-    return 1;
+    pairs.add(word)
   }
 
-  // Recursive case: the nth Fibonacci number is the sum of the (n-1)th and (n-2)th Fibonacci numbers
-  return getNthFib(n - 1) + getNthFib(n - 2);
+  return array;
 }
-
-// Example usage: Get the 6th Fibonacci number
-console.log(getNthFib(6)); // Output: 5
