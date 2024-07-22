@@ -250,29 +250,46 @@ class LinkedList {
 //   "esabatad"
 // ]))
 
-function getfib(n) {
-  let fib = [0, 1];
+// function getfib(n) {
+//   let fib = [0, 1];
 
-  if (n === 1) return 0;
-  if (n === 2) return 1;
+//   if (n === 1) return 0;
+//   if (n === 2) return 1;
 
-  for (let i = 2; i < n; i++) {
-    fib[i] = fib[i - 1] + fib[i - 2];
-  }
-  return fib[n - 1];
-}
+//   for (let i = 2; i < n; i++) {
+//     fib[i] = fib[i - 1] + fib[i - 2];
+//   }
+//   return fib[n - 1];
+// }
 
-function reverseIt(words) {
-  let array = [];
-  let pairs = new Set();
+// function reverseIt(words) {
+//   let array = [];
+//   let pairs = new Set();
 
-  for (let word of words) {
-    let reverseWord = word.split("").reverse().join("");
-    if (pairs.has(reverseWord) && reverseWord !== word) {
-      array.push([reverseWord, word])
+//   for (let word of words) {
+//     let reverseWord = word.split("").reverse().join("");
+//     if (pairs.has(reverseWord) && reverseWord !== word) {
+//       array.push([reverseWord, word])
+//     }
+//     pairs.add(word)
+//   }
+
+//   return array;
+// }
+
+
+
+function switchWords(words){
+
+  const pairArray = [];
+  let reversedWords = new Set();
+
+  for(let word of words){
+    let reversedWord = word.split('').reverse().join('');
+    if(reversedWords.has(reversedWord) && reversedWord !== word){
+      return pairArray([reversedWord, word])
     }
-    pairs.add(word)
   }
+  return pairArray
 
-  return array;
 }
