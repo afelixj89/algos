@@ -293,3 +293,21 @@ function switchWords(words){
   return pairArray
 
 }
+
+// function commonCharacters(strings){
+//   const resultArray = [];
+//   const firstString = strings[0];
+
+//   for(let char of strings){
+//     if(strings.every(str => str.includes(char))){
+//       if(!resultArray.includes(char)){
+//         resultArray.push(char);
+//         strings.strings.map(str => str.replace(char, ''));
+
+//       }
+// }
+
+//   }
+//   return resultArray
+
+// }
