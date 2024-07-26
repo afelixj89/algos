@@ -311,3 +311,18 @@ function switchWords(words){
 //   return resultArray
 
 // }
+
+
+
+function getNthFib(n) {
+  if (n === 1) return 0;
+  if (n === 2) return 1;
+  return getNthFib(n - 1) + getNthFib(n - 2);
+}
+
+function getNthFib(n) {
+  if (n === 1 || n === 2) return n - 1;
+  return getNthFib(n - 1) + getNthFib(n - 2);
+}
+
+
