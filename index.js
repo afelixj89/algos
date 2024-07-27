@@ -314,15 +314,37 @@ function switchWords(words){
 
 
 
-function getNthFib(n) {
-  if (n === 1) return 0;
-  if (n === 2) return 1;
-  return getNthFib(n - 1) + getNthFib(n - 2);
+// function getNthFib(n) {
+//   if (n === 1) return 0;
+//   if (n === 2) return 1;
+//   return getNthFib(n - 1) + getNthFib(n - 2);
+// }
+
+// function getNthFib(n) {
+//   if (n === 1 || n === 2) return n - 1;
+//   return getNthFib(n - 1) + getNthFib(n - 2);
+// }
+
+// function getNthFib(n) {
+//   if(n === 1) return 0;
+//   if(n === 2) return 1;
+//   return getNthFib(n- 1) + getNthFib(n - 2);
+// }
+
+
+
+function bubbleSort(arr){
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - 1; j++) {
+      if(arr[j] > arr[j + 1]){
+        let temp = arr[j];
+        arr[j] = arr[j + 1]
+        arr[j + 1 ] = temp
+      }
+      
+    }
+    return arr
+  }
 }
-
-function getNthFib(n) {
-  if (n === 1 || n === 2) return n - 1;
-  return getNthFib(n - 1) + getNthFib(n - 2);
-}
-
-
+let arr = [5, 3, 8, 4, 2];
+console.log(bubbleSort(arr)); // Output: [2, 3, 4, 5, 8]
