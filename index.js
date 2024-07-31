@@ -343,8 +343,25 @@ function bubbleSort(arr){
       }
       
     }
-    return arr
+    
   }
+  return arr
 }
 let arr = [5, 3, 8, 4, 2];
 console.log(bubbleSort(arr)); // Output: [2, 3, 4, 5, 8]
+
+
+function switchWord(words){
+
+  const pairArray = [];
+  let reversedWords = new Set();
+
+  for(let word of words){
+    let reversedWord = word.split('').reverse().join('');
+    if(reversedWords.has(reversedWord) && reversedWord !== word){
+      return pairArray([reversedWord, word])
+    }
+  }
+  return pairArray
+
+}
