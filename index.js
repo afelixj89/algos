@@ -393,3 +393,15 @@ var findErrorNums = function(nums) {
 
 
 }
+
+function removeDuplicatesFromLinkedList(linkedList) {
+  let current = linkedList;
+  while (current !== null && current.next !== null) {
+    if (current.value === current.next.value) {
+      current.next = current.next.next; // Skip the duplicate node
+    } else {
+      current = current.next; // Move to the next node
+    }
+  }
+  return linkedList;
+}
