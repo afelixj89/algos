@@ -333,35 +333,63 @@ function switchWords(words){
 
 
 
-function bubbleSort(arr){
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = 0; j < arr.length - 1; j++) {
-      if(arr[j] > arr[j + 1]){
-        let temp = arr[j];
-        arr[j] = arr[j + 1]
-        arr[j + 1 ] = temp
-      }
+// function bubbleSort(arr){
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr.length - 1; j++) {
+//       if(arr[j] > arr[j + 1]){
+//         let temp = arr[j];
+//         arr[j] = arr[j + 1]
+//         arr[j + 1 ] = temp
+//       }
       
-    }
+//     }
     
-  }
-  return arr
-}
-let arr = [5, 3, 8, 4, 2];
-console.log(bubbleSort(arr)); // Output: [2, 3, 4, 5, 8]
+//   }
+//   return arr
+// }
+// let arr = [5, 3, 8, 4, 2];
+// console.log(bubbleSort(arr)); // Output: [2, 3, 4, 5, 8]
 
 
-function switchWord(words){
+// function switchWord(words){
 
-  const pairArray = [];
-  let reversedWords = new Set();
+//   const pairArray = [];
+//   let reversedWords = new Set();
 
-  for(let word of words){
-    let reversedWord = word.split('').reverse().join('');
-    if(reversedWords.has(reversedWord) && reversedWord !== word){
-      return pairArray([reversedWord, word])
+//   for(let word of words){
+//     let reversedWord = word.split('').reverse().join('');
+//     if(reversedWords.has(reversedWord) && reversedWord !== word){
+//       return pairArray([reversedWord, word])
+//     }
+//   }
+//   return pairArray
+
+// }
+
+
+var findErrorNums = function(nums) {
+
+  let hash = {};
+  let array = [];
+
+
+  for(let num of nums){
+    if(!(num in hash)){
+      hash[num] = 0;
     }
+    hash[num]++
   }
-  return pairArray
+
+  for(let i = 0; i < nums.length; i++){
+    if(hash[nums] > 1 ){
+      array.push[nums[i]], nums[i + 1]
+    }
+
+
+  }
+
+
+  
+
 
 }
