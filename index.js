@@ -405,3 +405,39 @@ function removeDuplicatesFromLinkedList(linkedList) {
   }
   return linkedList;
 }
+
+
+function threeNumberSum(array, targetSum) {
+  array.sort((a, b) => a - b); // Sort the array
+  const triplets = [];
+
+  for (let i = 0; i < array.length - 2; i++) {
+      let left = i + 1;
+      let right = left + 1;
+
+      while (left < right) {
+          const currentSum = array[i] + array[left] + array[right];
+
+          if (currentSum === targetSum) {
+              triplets.push([array[i], array[left], array[right]]);
+              left++;
+              right--;
+          } else if (currentSum < targetSum) {
+              left++;
+          } else {
+              right--;
+          }
+      }
+  }
+
+  return triplets;
+}
+
+// Example usage:
+const array = [12, 3, 1, 2, -6, 5, -8, 6];
+const targetSum = 0;
+console.log(threeNumberSum(array, targetSum));
+
+
+
+
