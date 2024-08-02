@@ -367,76 +367,129 @@ function switchWords(words){
 // }
 
 
-var findErrorNums = function(nums) {
+// var findErrorNums = function(nums) {
 
-  let hash = {};
-  let array = [];
-
-
-  for(let num of nums){
-    if(!(num in hash)){
-      hash[num] = 0;
-    }
-    hash[num]++
-  }
-
-  for(let i = 0; i < nums.length; i++){
-    if(hash[nums] > 1 ){
-      array.push[nums[i]], nums[i + 1]
-    }
+//   let hash = {};
+//   let array = [];
 
 
-  }
+//   for(let num of nums){
+//     if(!(num in hash)){
+//       hash[num] = 0;
+//     }
+//     hash[num]++
+//   }
+
+//   for(let i = 0; i < nums.length; i++){
+//     if(hash[nums] > 1 ){
+//       array.push[nums[i]], nums[i + 1]
+//     }
+
+
+//   }
 
 
   
 
 
+// }
+
+// function removeDuplicatesFromLinkedList(linkedList) {
+//   let current = linkedList;
+//   while (current !== null && current.next !== null) {
+//     if (current.value === current.next.value) {
+//       current.next = current.next.next; // Skip the duplicate node
+//     } else {
+//       current = current.next; // Move to the next node
+//     }
+//   }
+//   return linkedList;
+// }
+
+// function threeNumberSum(array, targetSum) {
+//   array.sort((a, b) => a - b); // Sort the array
+//   const triplets = [];
+
+//   for (let i = 0; i < array.length - 2; i++) {
+//       let left = i + 1;
+//       let right = array.length - 1;
+
+//       while (left < right) {
+//           const currentSum = array[i] + array[left] + array[right];
+
+//           if (currentSum === targetSum) {
+//               triplets.push([array[i], array[left], array[right]]);
+//               left++;
+//               right--;
+//           } else if (currentSum < targetSum) {
+//               left++;
+//           } else {
+//               right--;
+//           }
+//       }
+//   }
+
+//   return triplets;
+// }
+
+// // Example usage:
+// const array = [12, 3, 1, 2, -6, 5, -8, 6];
+// const targetSum = 0;
+// console.log(threeNumberSum(array, targetSum)); // [[-8, 2, 6], [-8, 3, 5], [-6, 1, 5]]
+
+
+class LinkedList{
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
 }
 
-function removeDuplicatesFromLinkedList(linkedList) {
-  let current = linkedList;
-  while (current !== null && current.next !== null) {
-    if (current.value === current.next.value) {
-      current.next = current.next.next; // Skip the duplicate node
-    } else {
-      current = current.next; // Move to the next node
+
+function removeDuplicatesFromLinkedList(linkedList){
+  let currentNode = linkedList;
+
+  while(currentNode.next !== null){
+    if(currentNode.value === currentNode.next.value){
+      currentNode.next = currentNode.next.next;
+    }else{
+      currentNode = currentNode.next
     }
   }
-  return linkedList;
+
+
+ return linkedList;
 }
 
-function threeNumberSum(array, targetSum) {
-  array.sort((a, b) => a - b); // Sort the array
-  const triplets = [];
 
-  for (let i = 0; i < array.length - 2; i++) {
-      let left = i + 1;
-      let right = array.length - 1;
+// Definition for singly-linked list.
+class ListNode {
+  constructor(value = 0, next = null) {
+    this.value = value;
+    this.next = next;
+  }
+}
 
-      while (left < right) {
-          const currentSum = array[i] + array[left] + array[right];
-
-          if (currentSum === targetSum) {
-              triplets.push([array[i], array[left], array[right]]);
-              left++;
-              right--;
-          } else if (currentSum < targetSum) {
-              left++;
-          } else {
-              right--;
-          }
-      }
+function removeElements(head, val) {
+  // Handle the case where the head node itself needs to be removed
+  while (head !== null && head.value === val) {
+    head = head.next;
   }
 
-  return triplets;
+  let current = head;
+
+  while (current !== null && current.next !== null) {
+    if (current.next.value === val) {
+      current.next = current.next.next;
+    } else {
+      current = current.next;
+    }
+  }
+
+  return head;
 }
 
-// Example usage:
-const array = [12, 3, 1, 2, -6, 5, -8, 6];
-const targetSum = 0;
-console.log(threeNumberSum(array, targetSum)); // [[-8, 2, 6], [-8, 3, 5], [-6, 1, 5]]
-
-
+// Export for testing
+module.exports = { ListNode, removeElements };
 
 
