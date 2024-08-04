@@ -493,13 +493,45 @@
 // module.exports = { ListNode, removeElements };
 
 
-function getNthFib(n){
-  const fib = [0,1];
+// function getNthFib(n){
+//   const fib = [0,1];
 
-  for(let i = 2; i < n;i++){
-    fib[i] = fib[i - 1] + fib[i + 1];
-    }
-    return fib[n-1]
+//   for(let i = 2; i < n;i++){
+//     fib[i] = fib[i - 1] + fib[i + 1];
+//     }
+//     return fib[n-1]
 
   
-}
+// }
+
+
+
+
+    let nodes = [
+      {"id": "1", "next": "1-2", "value": 1},
+      {"id": "1-2", "next": "1-3", "value": 1},
+      {"id": "1-3", "next": "2", "value": 1},
+      {"id": "2", "next": "3", "value": 3},
+      {"id": "3", "next": "3-2", "value": 4},
+      {"id": "3-2", "next": "3-3", "value": 4},
+      {"id": "3-3", "next": "4", "value": 4},
+      {"id": "4", "next": "5", "value": 5},
+      {"id": "5", "next": "5-2", "value": 6},
+      {"id": "5-2", "next": null, "value": 6}
+    ]
+ 
+
+  function bookerIsWeird(nodes){
+    let newArray = []
+    for(let node of nodes){
+      if(node.value === 1){
+        newArray.push(node.value)
+
+      } 
+    }
+    console.log(newArray)
+    return newArray
+
+  }
+
+  bookerIsWeird(nodes);
