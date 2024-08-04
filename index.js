@@ -522,16 +522,12 @@
  
 
   function bookerIsWeird(nodes){
-    let newArray = []
-    for(let node of nodes){
-      if(node.value === 1){
-        newArray.push(node.value)
-
-      } 
-    }
-    console.log(newArray)
-    return newArray
+    let newArray = nodes.filter(node => node.value === 1)
+    console.log(newArray);
+    return newArray;
 
   }
+    
+ 
 
   bookerIsWeird(nodes);
