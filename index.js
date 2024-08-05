@@ -521,13 +521,36 @@
     ]
  
 
-  function bookerIsWeird(nodes){
-    let newArray = nodes.filter(node => node.value === 1)
-    console.log(newArray);
-    return newArray;
+  // function bookerIsWeird(nodes){
+  //   let newArray = nodes.filter(node => node.value === 1)
+  //   console.log(newArray);
+  //   return newArray;
 
-  }
+  // }
     
  
 
-  bookerIsWeird(nodes);
+  // bookerIsWeird(nodes);
+
+
+  function bookerIsWeirder(nodes){
+    let hash = {};
+
+    for(let element of nodes){
+      if(!(element in hash)){
+        hash[element.value] = 0;
+      }
+      hash[element.value]++
+    }
+
+    for(let element of nodes){
+      if(hash[element.value] === 1)
+        console.log(element.value)
+        return element.value
+     
+    }
+
+  }
+
+  bookerIsWeirder(nodes);
+
