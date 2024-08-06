@@ -599,3 +599,57 @@
     return slowPointer;
   }
   
+
+
+  // Define the BST class
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+// Define the function to find the closest value
+function findClosestValueInBst(tree, target) {
+  let closestValue = tree.value;
+  let currentNode = tree;
+
+  while (currentNode !== null) {
+    // Update the closest value if the current node's value is closer to the target
+    if (Math.abs(target - closestValue) > Math.abs(target - currentNode.value)) {
+      closestValue = currentNode.value;
+    }
+    
+    // Move to the left or right child depending on the target value
+    if (target < currentNode.value) {
+      currentNode = currentNode.left;
+    } else if (target > currentNode.value) {
+      currentNode = currentNode.right;
+    } else {
+      // If the target is exactly equal to the current node's value, return it immediately
+      break;
+    }
+  }
+
+  return closestValue;
+}
+
+// Example usage
+// Construct the BST according to the JSON structure
+const root = new BST(10);
+root.left = new BST(5);
+root.right = new BST(15);
+
+root.left.left = new BST(2);
+root.left.right = new BST(5);
+root.right.left = new BST(13);
+root.right.right = new BST(22);
+
+root.left.left.left = new BST(1);
+root.right.left.right = new BST(14);
+
+// Example target
+const target = 12;
+const closest = findClosestValueInBst(root, target);
+console.log("Closest value to", target, "is", closest);
