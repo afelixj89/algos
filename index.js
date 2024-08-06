@@ -580,3 +580,22 @@
   }
   
   // Do not edit the line below.
+  class LinkedList {
+    constructor(value) {
+      this.value = value;
+      this.next = null;
+    }
+  }
+  
+  function middleNode(linkedList) {
+    let slowPointer = linkedList;
+    let fastPointer = linkedList;
+  
+    while (fastPointer !== null && fastPointer.next !== null) {
+      slowPointer = slowPointer.next;
+      fastPointer = fastPointer.next.next;
+    }
+  
+    return slowPointer;
+  }
+  
