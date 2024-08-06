@@ -507,18 +507,18 @@
 
 
 
-    let nodes = [
-      {"id": "1", "next": "1-2", "value": 1},
-      {"id": "1-2", "next": "1-3", "value": 1},
-      {"id": "1-3", "next": "2", "value": 1},
-      {"id": "2", "next": "3", "value": 3},
-      {"id": "3", "next": "3-2", "value": 4},
-      {"id": "3-2", "next": "3-3", "value": 4},
-      {"id": "3-3", "next": "4", "value": 4},
-      {"id": "4", "next": "5", "value": 5},
-      {"id": "5", "next": "5-2", "value": 6},
-      {"id": "5-2", "next": null, "value": 6}
-    ]
+    // let nodes = [
+    //   {"id": "1", "next": "1-2", "value": 1},
+    //   {"id": "1-2", "next": "1-3", "value": 1},
+    //   {"id": "1-3", "next": "2", "value": 1},
+    //   {"id": "2", "next": "3", "value": 3},
+    //   {"id": "3", "next": "3-2", "value": 4},
+    //   {"id": "3-2", "next": "3-3", "value": 4},
+    //   {"id": "3-3", "next": "4", "value": 4},
+    //   {"id": "4", "next": "5", "value": 5},
+    //   {"id": "5", "next": "5-2", "value": 6},
+    //   {"id": "5-2", "next": null, "value": 6}
+    // ]
  
 
   // function bookerIsWeird(nodes){
@@ -533,24 +533,50 @@
   // bookerIsWeird(nodes);
 
 
-  function bookerIsWeirder(nodes){
-    let hash = {};
+  // function bookerIsWeirder(nodes){
+  //   let hash = {};
 
-    for(let element of nodes){
-      if(!(element in hash)){
-        hash[element.value] = 0;
-      }
-      hash[element.value]++
-    }
+  //   for(let element of nodes){
+  //     if(!(element in hash)){
+  //       hash[element.value] = 0;
+  //     }
+  //     hash[element.value]++
+  //   }
 
-    for(let element of nodes){
-      if(hash[element.value] === 1)
-        console.log(element.value)
-        return element.value
+  //   for(let element of nodes){
+  //     if(hash[element.value] === 1)
+  //       console.log(element.value)
+  //       return element.value
      
+  //   }
+
+  // }
+
+  // bookerIsWeirder(nodes);
+
+  function caesarCipherEncryptor(string, key) {
+    let result = ''; // Initialize an empty string to store the encrypted result
+  
+    // Iterate over each character in the input string
+    for (let i = 0; i < string.length; i++) {
+      let char = string[i]; // Get the current character
+      result += shiftCharacter(char, key); // Shift the character and add it to the result
     }
-
+  
+    return result; // Return the encrypted string
   }
-
-  bookerIsWeirder(nodes);
-
+  
+  // Helper function to shift a single character by the given key
+  function shiftCharacter(char, key) {
+    const charCode = char.charCodeAt(0); // Get the ASCII code of the character
+    // Normalize to zero-based index by subtracting 97 (ASCII code of 'a'),
+    // apply the shift with the key, wrap around using modulo 26,
+    // and convert back to ASCII code by adding 97
+    let letter = "a";
+    let letterCode = letter.charCodeAt(0)
+  
+    const newCharCode = ((charCode - letterCode + key) % 26) + letterCode ;
+    return String.fromCharCode(newCharCode); // Convert the new ASCII code back to a character
+  }
+  
+  // Do not edit the line below.
