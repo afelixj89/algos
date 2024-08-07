@@ -554,102 +554,110 @@
 
   // bookerIsWeirder(nodes);
 
-  function caesarCipherEncryptor(string, key) {
-    let result = ''; // Initialize an empty string to store the encrypted result
+//   function caesarCipherEncryptor(string, key) {
+//     let result = ''; // Initialize an empty string to store the encrypted result
   
-    // Iterate over each character in the input string
-    for (let i = 0; i < string.length; i++) {
-      let char = string[i]; // Get the current character
-      result += shiftCharacter(char, key); // Shift the character and add it to the result
-    }
+//     // Iterate over each character in the input string
+//     for (let i = 0; i < string.length; i++) {
+//       let char = string[i]; // Get the current character
+//       result += shiftCharacter(char, key); // Shift the character and add it to the result
+//     }
   
-    return result; // Return the encrypted string
-  }
+//     return result; // Return the encrypted string
+//   }
   
-  // Helper function to shift a single character by the given key
-  function shiftCharacter(char, key) {
-    const charCode = char.charCodeAt(0); // Get the ASCII code of the character
-    // Normalize to zero-based index by subtracting 97 (ASCII code of 'a'),
-    // apply the shift with the key, wrap around using modulo 26,
-    // and convert back to ASCII code by adding 97
-    let letter = "a";
-    let letterCode = letter.charCodeAt(0)
+//   // Helper function to shift a single character by the given key
+//   function shiftCharacter(char, key) {
+//     const charCode = char.charCodeAt(0); // Get the ASCII code of the character
+//     // Normalize to zero-based index by subtracting 97 (ASCII code of 'a'),
+//     // apply the shift with the key, wrap around using modulo 26,
+//     // and convert back to ASCII code by adding 97
+//     let letter = "a";
+//     let letterCode = letter.charCodeAt(0)
   
-    const newCharCode = ((charCode - letterCode + key) % 26) + letterCode ;
-    return String.fromCharCode(newCharCode); // Convert the new ASCII code back to a character
-  }
+//     const newCharCode = ((charCode - letterCode + key) % 26) + letterCode ;
+//     return String.fromCharCode(newCharCode); // Convert the new ASCII code back to a character
+//   }
   
-  // Do not edit the line below.
-  class LinkedList {
-    constructor(value) {
-      this.value = value;
-      this.next = null;
-    }
-  }
+//   // Do not edit the line below.
+//   class LinkedList {
+//     constructor(value) {
+//       this.value = value;
+//       this.next = null;
+//     }
+//   }
   
-  function middleNode(linkedList) {
-    let slowPointer = linkedList;
-    let fastPointer = linkedList;
+//   function middleNode(linkedList) {
+//     let slowPointer = linkedList;
+//     let fastPointer = linkedList;
   
-    while (fastPointer !== null && fastPointer.next !== null) {
-      slowPointer = slowPointer.next;
-      fastPointer = fastPointer.next.next;
-    }
+//     while (fastPointer !== null && fastPointer.next !== null) {
+//       slowPointer = slowPointer.next;
+//       fastPointer = fastPointer.next.next;
+//     }
   
-    return slowPointer;
-  }
+//     return slowPointer;
+//   }
   
 
 
-  // Define the BST class
-class BST {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
+//   // Define the BST class
+// class BST {
+//   constructor(value) {
+//     this.value = value;
+//     this.left = null;
+//     this.right = null;
+//   }
+// }
 
-// Define the function to find the closest value
-function findClosestValueInBst(tree, target) {
-  let closestValue = tree.value;
-  let currentNode = tree;
+// // Define the function to find the closest value
+// function findClosestValueInBst(tree, target) {
+//   let closestValue = tree.value;
+//   let currentNode = tree;
 
-  while (currentNode !== null) {
-    // Update the closest value if the current node's value is closer to the target
-    if (Math.abs(target - closestValue) > Math.abs(target - currentNode.value)) {
-      closestValue = currentNode.value;
-    }
+//   while (currentNode !== null) {
+//     // Update the closest value if the current node's value is closer to the target
+//     if (Math.abs(target - closestValue) > Math.abs(target - currentNode.value)) {
+//       closestValue = currentNode.value;
+//     }
     
-    // Move to the left or right child depending on the target value
-    if (target < currentNode.value) {
-      currentNode = currentNode.left;
-    } else if (target > currentNode.value) {
-      currentNode = currentNode.right;
-    } else {
-      // If the target is exactly equal to the current node's value, return it immediately
-      break;
-    }
+//     // Move to the left or right child depending on the target value
+//     if (target < currentNode.value) {
+//       currentNode = currentNode.left;
+//     } else if (target > currentNode.value) {
+//       currentNode = currentNode.right;
+//     } else {
+//       // If the target is exactly equal to the current node's value, return it immediately
+//       break;
+//     }
+//   }
+
+//   return closestValue;
+// }
+
+// // Example usage
+// // Construct the BST according to the JSON structure
+// const root = new BST(10);
+// root.left = new BST(5);
+// root.right = new BST(15);
+
+// root.left.left = new BST(2);
+// root.left.right = new BST(5);
+// root.right.left = new BST(13);
+// root.right.right = new BST(22);
+
+// root.left.left.left = new BST(1);
+// root.right.left.right = new BST(14);
+
+// // Example target
+// const target = 12;
+// const closest = findClosestValueInBst(root, target);
+// console.log("Closest value to", target, "is", closest);
+
+
+class LinkedList{
+  constructor(value){
+    this.value = value;
+    this.next = null
   }
-
-  return closestValue;
 }
-
-// Example usage
-// Construct the BST according to the JSON structure
-const root = new BST(10);
-root.left = new BST(5);
-root.right = new BST(15);
-
-root.left.left = new BST(2);
-root.left.right = new BST(5);
-root.right.left = new BST(13);
-root.right.right = new BST(22);
-
-root.left.left.left = new BST(1);
-root.right.left.right = new BST(14);
-
-// Example target
-const target = 12;
-const closest = findClosestValueInBst(root, target);
-console.log("Closest value to", target, "is", closest);
