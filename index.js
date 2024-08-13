@@ -148,7 +148,7 @@
 //     current.next = newNode;
 //   }
 
-  // Method to print the list
+// Method to print the list
 //   print() {
 //     let current = this.head;
 //     while (current !== null) {
@@ -277,8 +277,6 @@
 //   return array;
 // }
 
-
-
 // function switchWords(words){
 
 //   const pairArray = [];
@@ -312,8 +310,6 @@
 
 // }
 
-
-
 // function getNthFib(n) {
 //   if (n === 1) return 0;
 //   if (n === 2) return 1;
@@ -331,8 +327,6 @@
 //   return getNthFib(n- 1) + getNthFib(n - 2);
 // }
 
-
-
 // function bubbleSort(arr){
 //   for (let i = 0; i < arr.length; i++) {
 //     for (let j = 0; j < arr.length - 1; j++) {
@@ -341,15 +335,14 @@
 //         arr[j] = arr[j + 1]
 //         arr[j + 1 ] = temp
 //       }
-      
+
 //     }
-    
+
 //   }
 //   return arr
 // }
 // let arr = [5, 3, 8, 4, 2];
 // console.log(bubbleSort(arr)); // Output: [2, 3, 4, 5, 8]
-
 
 // function switchWord(words){
 
@@ -366,12 +359,10 @@
 
 // }
 
-
 // var findErrorNums = function(nums) {
 
 //   let hash = {};
 //   let array = [];
-
 
 //   for(let num of nums){
 //     if(!(num in hash)){
@@ -385,12 +376,7 @@
 //       array.push[nums[i]], nums[i + 1]
 //     }
 
-
 //   }
-
-
-  
-
 
 // }
 
@@ -437,14 +423,12 @@
 // const targetSum = 0;
 // console.log(threeNumberSum(array, targetSum)); // [[-8, 2, 6], [-8, 3, 5], [-6, 1, 5]]
 
-
 // class LinkedList{
 //   constructor(value) {
 //     this.value = value;
 //     this.next = null;
 //   }
 // }
-
 
 // function removeDuplicatesFromLinkedList(linkedList){
 //   let currentNode = linkedList;
@@ -457,10 +441,8 @@
 //     }
 //   }
 
-
 //  return linkedList;
 // }
-
 
 // Definition for singly-linked list.
 // class ListNode {
@@ -492,7 +474,6 @@
 // // Export for testing
 // module.exports = { ListNode, removeElements };
 
-
 // function getNthFib(n){
 //   const fib = [0,1];
 
@@ -501,71 +482,63 @@
 //     }
 //     return fib[n-1]
 
-  
 // }
 
+// let nodes = [
+//   {"id": "1", "next": "1-2", "value": 1},
+//   {"id": "1-2", "next": "1-3", "value": 1},
+//   {"id": "1-3", "next": "2", "value": 1},
+//   {"id": "2", "next": "3", "value": 3},
+//   {"id": "3", "next": "3-2", "value": 4},
+//   {"id": "3-2", "next": "3-3", "value": 4},
+//   {"id": "3-3", "next": "4", "value": 4},
+//   {"id": "4", "next": "5", "value": 5},
+//   {"id": "5", "next": "5-2", "value": 6},
+//   {"id": "5-2", "next": null, "value": 6}
+// ]
 
+// function bookerIsWeird(nodes){
+//   let newArray = nodes.filter(node => node.value === 1)
+//   console.log(newArray);
+//   return newArray;
 
+// }
 
-    // let nodes = [
-    //   {"id": "1", "next": "1-2", "value": 1},
-    //   {"id": "1-2", "next": "1-3", "value": 1},
-    //   {"id": "1-3", "next": "2", "value": 1},
-    //   {"id": "2", "next": "3", "value": 3},
-    //   {"id": "3", "next": "3-2", "value": 4},
-    //   {"id": "3-2", "next": "3-3", "value": 4},
-    //   {"id": "3-3", "next": "4", "value": 4},
-    //   {"id": "4", "next": "5", "value": 5},
-    //   {"id": "5", "next": "5-2", "value": 6},
-    //   {"id": "5-2", "next": null, "value": 6}
-    // ]
- 
+// bookerIsWeird(nodes);
 
-  // function bookerIsWeird(nodes){
-  //   let newArray = nodes.filter(node => node.value === 1)
-  //   console.log(newArray);
-  //   return newArray;
+// function bookerIsWeirder(nodes){
+//   let hash = {};
 
-  // }
-    
- 
+//   for(let element of nodes){
+//     if(!(element in hash)){
+//       hash[element.value] = 0;
+//     }
+//     hash[element.value]++
+//   }
 
-  // bookerIsWeird(nodes);
+//   for(let element of nodes){
+//     if(hash[element.value] === 1)
+//       console.log(element.value)
+//       return element.value
 
+//   }
 
-  // function bookerIsWeirder(nodes){
-  //   let hash = {};
+// }
 
-  //   for(let element of nodes){
-  //     if(!(element in hash)){
-  //       hash[element.value] = 0;
-  //     }
-  //     hash[element.value]++
-  //   }
-
-  //   for(let element of nodes){
-  //     if(hash[element.value] === 1)
-  //       console.log(element.value)
-  //       return element.value
-     
-  //   }
-
-  // }
-
-  // bookerIsWeirder(nodes);
+// bookerIsWeirder(nodes);
 
 //   function caesarCipherEncryptor(string, key) {
 //     let result = ''; // Initialize an empty string to store the encrypted result
-  
+
 //     // Iterate over each character in the input string
 //     for (let i = 0; i < string.length; i++) {
 //       let char = string[i]; // Get the current character
 //       result += shiftCharacter(char, key); // Shift the character and add it to the result
 //     }
-  
+
 //     return result; // Return the encrypted string
 //   }
-  
+
 //   // Helper function to shift a single character by the given key
 //   function shiftCharacter(char, key) {
 //     const charCode = char.charCodeAt(0); // Get the ASCII code of the character
@@ -574,11 +547,11 @@
 //     // and convert back to ASCII code by adding 97
 //     let letter = "a";
 //     let letterCode = letter.charCodeAt(0)
-  
+
 //     const newCharCode = ((charCode - letterCode + key) % 26) + letterCode ;
 //     return String.fromCharCode(newCharCode); // Convert the new ASCII code back to a character
 //   }
-  
+
 //   // Do not edit the line below.
 //   class LinkedList {
 //     constructor(value) {
@@ -586,20 +559,18 @@
 //       this.next = null;
 //     }
 //   }
-  
+
 //   function middleNode(linkedList) {
 //     let slowPointer = linkedList;
 //     let fastPointer = linkedList;
-  
+
 //     while (fastPointer !== null && fastPointer.next !== null) {
 //       slowPointer = slowPointer.next;
 //       fastPointer = fastPointer.next.next;
 //     }
-  
+
 //     return slowPointer;
 //   }
-  
-
 
 //   // Define the BST class
 // class BST {
@@ -620,7 +591,7 @@
 //     if (Math.abs(target - closestValue) > Math.abs(target - currentNode.value)) {
 //       closestValue = currentNode.value;
 //     }
-    
+
 //     // Move to the left or right child depending on the target value
 //     if (target < currentNode.value) {
 //       currentNode = currentNode.left;
@@ -654,10 +625,42 @@
 // const closest = findClosestValueInBst(root, target);
 // console.log("Closest value to", target, "is", closest);
 
+// class LinkedList {
+//   constructor(value) {
+//     this.value = value;
+//     this.next = null;
+//   }
+// }
 
-class LinkedList{
-  constructor(value){
-    this.value = value;
-    this.next = null
+function smallestDifference(arrayOne, arrayTwo) {
+  arrayOne.sort((a, b) => a - b);
+  arrayTwo.sort((a, b) => a - b);
+
+  let indexOne = 0;
+  let indexTwo = 0;
+  let smallest = Infinity;
+  let smallestPair = [];
+
+  while(indexOne < arrayOne.length && indexTwo < arrayTwo.length){
+    let numOne = arrayOne[indexOne];
+    let numTwo = arrayTwo[indexTwo];
+
+    let currentDifference  = Math.abs(numOne - numTwo);
+
+
+    if(currentDifference < smallest){
+      smallest = currentDifference;
+      smallestPair = [numOne, numTwo];
+    }
+    if(numOne < numTwo){
+      indexOne++;
+    }else{
+      indexTwo++
+    }
+    
   }
+
+  return smallestPair
 }
+
+console.log(smallestDifference([1, 3, 15],[8, 23, 127]))
