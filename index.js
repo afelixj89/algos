@@ -632,35 +632,57 @@
 //   }
 // }
 
-function smallestDifference(arrayOne, arrayTwo) {
-  arrayOne.sort((a, b) => a - b);
-  arrayTwo.sort((a, b) => a - b);
+// function smallestDifference(arrayOne, arrayTwo) {
+//   arrayOne.sort((a, b) => a - b);
+//   arrayTwo.sort((a, b) => a - b);
 
-  let indexOne = 0;
-  let indexTwo = 0;
-  let smallest = Infinity;
-  let smallestPair = [];
+//   let indexOne = 0;
+//   let indexTwo = 0;
+//   let smallest = Infinity;
+//   let smallestPair = [];
 
-  while(indexOne < arrayOne.length && indexTwo < arrayTwo.length){
-    let numOne = arrayOne[indexOne];
-    let numTwo = arrayTwo[indexTwo];
+//   while(indexOne < arrayOne.length && indexTwo < arrayTwo.length){
+//     let numOne = arrayOne[indexOne];
+//     let numTwo = arrayTwo[indexTwo];
 
-    let currentDifference  = Math.abs(numOne - numTwo);
+//     let currentDifference  = Math.abs(numOne - numTwo);
 
 
-    if(currentDifference < smallest){
-      smallest = currentDifference;
-      smallestPair = [numOne, numTwo];
-    }
-    if(numOne < numTwo){
-      indexOne++;
-    }else{
-      indexTwo++
-    }
+//     if(currentDifference < smallest){
+//       smallest = currentDifference;
+//       smallestPair = [numOne, numTwo];
+//     }
+//     if(numOne < numTwo){
+//       indexOne++;
+//     }else{
+//       indexTwo++
+//     }
     
-  }
+//   }
 
-  return smallestPair
+//   return smallestPair
+// }
+
+// console.log(smallestDifference([1, 3, 15],[8, 23, 127]))
+
+
+function moveElementToEnd(array, toMove) {
+  let result = [];
+  let toMoveArray = [];
+
+  for(let num of array){
+    if(num === toMove){
+      toMoveArray.push(num);
+    }
+    else{
+      result.push(num);
+    }
+  }
+  console.log(result.concat(toMoveArray))
+  return result.concat(toMoveArray);
+ 
 }
 
-console.log(smallestDifference([1, 3, 15],[8, 23, 127]))
+moveElementToEnd([1, 2, 3, 2, 4, 2, 5], 2)
+
+
