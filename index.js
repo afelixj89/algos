@@ -666,23 +666,23 @@
 // console.log(smallestDifference([1, 3, 15],[8, 23, 127]))
 
 
-function moveElementToEnd(array, toMove) {
-  let result = [];
-  let toMoveArray = [];
+// function moveElementToEnd(array, toMove) {
+//   let result = [];
+//   let toMoveArray = [];
 
-  for(let num of array){
-    if(num === toMove){
-      toMoveArray.push(num);
-    }
-    else{
-      result.push(num);
-    }
-  }
-  console.log(result.concat(toMoveArray))
-  return result.concat(toMoveArray);
+//   for(let num of array){
+//     if(num === toMove){
+//       toMoveArray.push(num);
+//     }
+//     else{
+//       result.push(num);
+//     }
+//   }
+//   console.log(result.concat(toMoveArray))
+//   return result.concat(toMoveArray);
  
-}
+// }
 
-moveElementToEnd([1, 2, 3, 2, 4, 2, 5], 2)
+// moveElementToEnd([1, 2, 3, 2, 4, 2, 5], 2) 
 
 
