@@ -647,7 +647,6 @@
 
 //     let currentDifference  = Math.abs(numOne - numTwo);
 
-
 //     if(currentDifference < smallest){
 //       smallest = currentDifference;
 //       smallestPair = [numOne, numTwo];
@@ -657,14 +656,13 @@
 //     }else{
 //       indexTwo++
 //     }
-    
+
 //   }
 
 //   return smallestPair
 // }
 
 // console.log(smallestDifference([1, 3, 15],[8, 23, 127]))
-
 
 // function moveElementToEnd(array, toMove) {
 //   let result = [];
@@ -680,9 +678,61 @@
 //   }
 //   console.log(result.concat(toMoveArray))
 //   return result.concat(toMoveArray);
- 
+
 // }
 
 // moveElementToEnd([1, 2, 3, 2, 4, 2, 5], 2) ,,
 
+function transposeMatrix(matrix) {
 
+    let transposed = [];
+  
+    
+    for (let col = 0; col < matrix[0].length; col++) {
+      transposed.push([]);
+    }
+  
+    for (let row = 0; row < matrix.length; row++) {
+      for (let col = 0; col < matrix[0].length; col++) {
+        transposed[col][row] = matrix[row][col];
+      }
+    }
+    return transposed;
+  }
+  
+
+
+
+  class BinaryTree {
+    constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+  }
+
+  function branchSums(root) {
+    const sums = [];
+    calculateBranchSums(root, 0, sums);
+    return sums;
+  }
+  function calculateBranchSums(node, runningSum, sums) {
+    if (node === null) return;
+
+    const newRunningSum = runningSum + node.value;
+
+    if (node.left === null && node.right === null) {
+      sums.push(newRunningSum);
+      return;
+    }
+
+    if (node.left !== null) {
+      calculateBranchSums(node.left, newRunningSum, sums);
+    }
+    if (node.right !== null) {
+      calculateBranchSums(node.right, newRunningSum, sums);
+    }
+  }
+  
+
+  
