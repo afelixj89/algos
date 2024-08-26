@@ -711,28 +711,28 @@ function transposeMatrix(matrix) {
   //   }
   // }
 
-  function branchSums(root) {
-    const sums = [];
-    calculateBranchSums(root, 0, sums);
-    return sums;
-  }
-  function calculateBranchSums(node, runningSum, sums) {
-    if (node === null) return;
+  // function branchSums(root) {
+  //   const sums = [];
+  //   calculateBranchSums(root, 0, sums);
+  //   return sums;
+  // }
+  // function calculateBranchSums(node, runningSum, sums) {
+  //   if (node === null) return;
 
-    const newRunningSum = runningSum + node.value;
+  //   const newRunningSum = runningSum + node.value;
 
-    if (node.left === null && node.right === null) {
-      sums.push(newRunningSum);
-      return;
-    }
+  //   if (node.left === null && node.right === null) {
+  //     sums.push(newRunningSum);
+  //     return;
+  //   }
 
-    if (node.left !== null) {
-      calculateBranchSums(node.left, newRunningSum, sums);
-    }
-    if (node.right !== null) {
-      calculateBranchSums(node.right, newRunningSum, sums);
-    }
-  }
+  //   if (node.left !== null) {
+  //     calculateBranchSums(node.left, newRunningSum, sums);
+  //   }
+  //   if (node.right !== null) {
+  //     calculateBranchSums(node.right, newRunningSum, sums);
+  //   }
+  // }
   
 
   
