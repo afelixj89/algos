@@ -735,58 +735,81 @@ function transposeMatrix(matrix) {
   // }
   
 
-  class LinkedList{
-    constructor(value){
-      this.value = value;
-      this.next = null;
-    }
-  }
+  // class LinkedList{
+  //   constructor(value){
+  //     this.value = value;
+  //     this.next = null;
+  //   }
+  // }
   
-  function removeDuplicatesFromLinkedList(linkedList){
-    let currentNode = linkedList;
+  // function removeDuplicatesFromLinkedList(linkedList){
+  //   let currentNode = linkedList;
   
-    while(currentNode.next !== null){
-      if(currentNode.value === currentNode.next.value){
-        currentNode.next = currentNode.next.next;
-      }
-      else{
-        currentNode = currentNode.next
-      }
-    }
-    return linkedList;
+  //   while(currentNode.next !== null){
+  //     if(currentNode.value === currentNode.next.value){
+  //       currentNode.next = currentNode.next.next;
+  //     }
+  //     else{
+  //       currentNode = currentNode.next
+  //     }
+  //   }
+  //   return linkedList;
+  // }
+
+
+  // function removeDuplicatesFromLinkedList(linkedList){
+  //   let currentNode = linkedList;
+
+  //   while(currentNode.next !==null){
+  //     if(currentNode.value === currentNode.next.value){
+  //       currentNode.next = currentNode.next.next;
+
+  //     }
+  //     else{
+  //       currentNode = currentNode.next
+  //     }
+  //   }
+  //     return linkedList
+
+
+
+  //     function removeDuplicatesFromLinkedList(linkedList){
+  //       let currentNode = linkedList;
+    
+  //       while(currentNode.next !==null){
+  //         if(currentNode.value === currentNode.next.value){
+  //           currentNode.next = currentNode.next.next;
+    
+  //         }
+  //         else{
+  //           currentNode = currentNode.next
+  //         }
+  //       }
+  //         return linkedList
+    
+    
+  //     }
+  // }
+
+  // function removeDuplicatesFromLinkedList(linkedList){
+  //   let currentNode = linkedList;
+
+  //   while(currentNode.next !== null){
+  //     if(currentNode.value === currentNode.next.value){
+  //       currentNode.next = currentNode.next.next;
+  //     }
+  //     else{
+  //       currentNode = currentNode.next
+  //     }
+  //   }
+  //   return linkedList
+  // }
+
+function sortedSquaredArray(array){
+  let sortedSquared = [];
+  for(let i = 0; i < array.length;i++){
+    let squared = Math.pow(array[i], 2);
+    sortedSquared.push(squared);
   }
-
-
-  function removeDuplicatesFromLinkedList(linkedList){
-    let currentNode = linkedList;
-
-    while(currentNode.next !==null){
-      if(currentNode.value === currentNode.next.value){
-        currentNode.next = currentNode.next.next;
-
-      }
-      else{
-        currentNode = currentNode.next
-      }
-    }
-      return linkedList
-
-
-
-      function removeDuplicatesFromLinkedList(linkedList){
-        let currentNode = linkedList;
-    
-        while(currentNode.next !==null){
-          if(currentNode.value === currentNode.next.value){
-            currentNode.next = currentNode.next.next;
-    
-          }
-          else{
-            currentNode = currentNode.next
-          }
-        }
-          return linkedList
-    
-    
-      }
-  }
+  return sortedSquared.sort((a,b) => (a -b));
+}
