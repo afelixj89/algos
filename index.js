@@ -816,25 +816,25 @@ function transposeMatrix(matrix) {
 //   return j === sequence.length;
 // }
 
-function tournamentWinner(competitions, results) {
-  const scores = {};
-  let currentBestTeam = "";
-  scores[currentBestTeam] = 0;
+// function tournamentWinner(competitions, results) {
+//   const scores = {};
+//   let currentBestTeam = "";
+//   scores[currentBestTeam] = 0;
 
-  for (let i = 0; i < competitions.length; i++) {
-    const result = results[i];
-    const [homeTeam, awayTeam] = competitions[i];
+//   for (let i = 0; i < competitions.length; i++) {
+//     const result = results[i];
+//     const [homeTeam, awayTeam] = competitions[i];
 
-    const winningTeam = result === 1 ? homeTeam : awayTeam;
+//     const winningTeam = result === 1 ? homeTeam : awayTeam;
 
-    if(!(winningTeam in scores)){
-      scores[winningTeam] = 0;
-    }
-    scores[winningTeam] += 3;
+//     if(!(winningTeam in scores)){
+//       scores[winningTeam] = 0;
+//     }
+//     scores[winningTeam] += 3;
 
-    if(scores[winningTeam] > scores[currentBestTeam]){
-      currentBestTeam = winningTeam
-    }
-  }
-  return currentBestTeam
-}
+//     if(scores[winningTeam] > scores[currentBestTeam]){
+//       currentBestTeam = winningTeam
+//     }
+//   }
+//   return currentBestTeam
+// }
