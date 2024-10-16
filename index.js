@@ -838,4 +838,31 @@ function transposeMatrix(matrix) {
 //   }
 //   return currentBestTeam
 // }
-d
+
+function twoNumberSum(array, targetSum) {
+  let hash = {};
+
+  for (let i = 0; i < array.length; i++) {
+    let numberNeeded = (targetSum = array[i]);
+
+    if (numberNeeded in hash) {
+      return [numberNeeded, array[i]];
+    }
+    hash[array[i]] = i;
+  }
+  return [];
+}
+
+function twoNumberSum(array, targetSum) {
+  let hash = {};
+
+  for(let i = 0; i < array.length;i++){
+    let numberNeeded = targetSum - array[i]
+    if(numberNeeded in hash){
+      return [numberNeeded,[array][i]]
+    }
+    hash[array[i]] =i
+  }
+  return []
+}
+
