@@ -866,19 +866,19 @@ function twoNumberSum(array, targetSum) {
 //   return []
 // }
 
-// function twoNumberSum(array, targetSum){
+function twoNumberSum(array, targetSum){
 
-//   let hash = {};
+  let hash = {};
 
-//   for(let i=0; i < array.length; i++){
-//     let numberNeeded = targetSum - array[i];
-//     if(numberNeeded in hash){
-//       return[numberNeeded, array[i]];
-//     }
-//     hash[array[i]]= i
+  for(let i=0; i < array.length; i++){
+    let numberNeeded = targetSum - array[i];
+    if(numberNeeded in hash){
+      return[numberNeeded, array[i]];
+    }
+    hash[array[i]]= i
     
 
-//   }
-//   return []
+  }
+  return []
 
-// }
+}
